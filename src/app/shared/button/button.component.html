@@ -1,0 +1,4 @@
+<button class="button" [ngClass]="{'button--primary': isPrimary, 'button--secondary': isSecondary}" [disabled]="disabled"
+  (click)="onClick($event)">
+  <ng-content></ng-content>
+</button>

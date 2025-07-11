@@ -1,0 +1,42 @@
+@use '../../../styles.scss' as styles;
+
+.input-container {
+  position: relative;
+
+  .input-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  .input-icon {
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+    border: 1px solid styles.$secondary-color;
+    border-radius: 0.5rem;
+    color: styles.$font-color;
+    font-size: styles.$font-size;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .input-error {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+
+  .disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

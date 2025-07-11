@@ -1,0 +1,56 @@
+@use "../../../styles.scss" as styles;
+
+.pokemon-container {
+  padding: 1rem;
+  min-height: 100dvh;
+
+  .pokemon-header {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: styles.$font-color;
+
+    .logo {
+      width: 30rem;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    .pokemon-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: styles.$font-color;
+      margin-bottom: 1rem;
+    }
+
+    .pokemon-description {
+      font-size: styles.$font-size;
+      color: styles.$font-color;
+      margin-bottom: 1rem;
+    }
+
+    .pokemon-search {
+      display: flex;
+      align-items: center;
+
+      app-input {
+        flex: 1;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .pokemon-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+
+    app-card {
+      flex: 0 0 320px; /* Fixed width for cards */
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="pokemon-container">
+  <div class="pokemon-header">
+    <img [src]="logo" alt="Logo" class="logo">
+    <p class="pokemon-description">Descubra o mundo dos Pokémons</p>
+    <div class="pokemon-search">
+      <app-input placeholder="Insira o nome do Pokémon" icon="search"></app-input>
+      <app-button variant="primary" (click)="onSearchClick()">Buscar</app-button>
+    </div>
+  </div>
+  <div class="pokemon-container">
+    <app-card [pokemon]="pokemon"></app-card>
+  </div>
+</div>

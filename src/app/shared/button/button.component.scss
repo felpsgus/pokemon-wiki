@@ -1,0 +1,32 @@
+@use "../../../styles.scss" as styles;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: styles.$primary-color;
+  color: styles.$font-color;
+  font-size: styles.$font-size;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(1.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  &.disabled {
+    filter: brightness(0.8);
+    cursor: not-allowed;
+  }
+
+  &.button--primary {
+    background-color: styles.$primary-color;
+  }
+
+  &.button--secondary {
+    background-color: styles.$secondary-color;
+  }
+}

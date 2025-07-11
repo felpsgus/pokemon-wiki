@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { AppModule } from './app.module';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [AppModule],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
-  protected title = 'anime-wiki';
+  protected title = 'pokemon-wiki';
 }

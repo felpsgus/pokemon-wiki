@@ -1,0 +1,7 @@
+<div class="input-container" [ngClass]="{'disabled': disabled}">
+  <label class="input-label" *ngIf="label" [attr.for]="id">{{ label }}</label>
+  <mat-icon *ngIf="icon" [fontIcon]="icon" class="input-icon"></mat-icon>
+  <input class="input-field" [attr.placeholder]="placeholder" [attr.type]="type" [attr.disabled]="disabled"
+    [ngClass]="class" [ngModel]="value" (ngModelChange)="onChange($event)" />
+  <span class="input-error" *ngIf="error">{{ error }}</span>
+</div>
