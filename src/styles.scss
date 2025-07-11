@@ -1,24 +1,176 @@
-/* You can add global styles to this file, and also import other style files */
-$primary-color: #3367B0;
-$secondary-color: #FFCC04;
-$background-color: #282c34;
-$font-color: #ffffff;
+/* Modern Pokemon Wiki Styles */
+
+// Color Palette
+$primary-color: #3367b0 !default;
+$primary-dark: #2a5a9a !default;
+$secondary-color: #ffcc04 !default;
+$secondary-dark: #e6b503 !default;
+$background-color: #1a1d26 !default;
+$background-secondary: #282c34 !default;
+$surface-color: #2d3548 !default;
+$font-color: #ffffff !default;
+$font-color-muted: #b8c2cc !default;
+$accent-gradient: linear-gradient(135deg, #3367b0 0%, #2a5a9a 100%) !default;
+$gold-gradient: linear-gradient(135deg, #ffcc04 0%, #e6b503 100%) !default;
+
+// Typography
 $font-size: 16px;
+$font-size-sm: 0.875rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.5rem;
+$font-size-2xl: 2rem;
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
+
+// Border Radius
+$radius-sm: 0.5rem;
+$radius-md: 1rem;
+$radius-lg: 1.5rem;
+$radius-xl: 2rem;
+
+// Shadows
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+$shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.25);
+$shadow-glow: 0 0 20px rgba(51, 103, 176, 0.3);
+
+// Transitions
+$transition-fast: 0.15s ease-out;
+$transition-normal: 0.3s ease-out;
+$transition-slow: 0.5s ease-out;
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
-  background-color: $background-color;
+  background: linear-gradient(
+    135deg,
+    $background-color 0%,
+    $background-secondary 100%
+  );
+  color: $font-color;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+// Typography Styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: $spacing-sm;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: $font-size-2xl;
+  background: $gold-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+h2 {
+  font-size: $font-size-xl;
+}
+
+h3 {
+  font-size: $font-size-lg;
+}
+
+p {
+  margin-bottom: $spacing-md;
+  color: $font-color-muted;
+}
+
+// Scrollbar Styling
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $background-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $accent-gradient;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-dark;
+}
+
+// Global Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}

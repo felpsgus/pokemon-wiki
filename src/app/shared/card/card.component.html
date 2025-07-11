@@ -1,13 +1,13 @@
-<div class="card">
+<div class="card" *ngIf="pokemon">
   <div class="card-title">
-    <h3> {{ pokemon.name | titlecase}} </h3>
+    <h3>{{ pokemon.name | titlecase }}</h3>
   </div>
   <div class="card-body">
-    <img [src]="pokemon.sprites.front_shiny" alt="pokemon" class="card-image" />
-    <div class="card-stats">
-      <span class="card-stats-type" *ngFor="let t of pokemon.types">
-        {{ t.type.name }}
-      </span>
-    </div>
+    <img [src]="pokemon.sprites.front_shiny" [alt]="pokemon.name" class="card-image" />
+  </div>
+  <div class="card-stats">
+    <span class="card-stats-type" [ngClass]="t.type.name" *ngFor="let t of pokemon.types">
+      {{ t.type.name }}
+    </span>
   </div>
 </div>

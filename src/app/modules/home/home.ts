@@ -11,20 +11,37 @@ import { Pokemon } from '../../model/pokemon';
 export class Home implements OnInit {
   logo = '/pokemon.png';
   searchTerm: string = '';
-  pokemon!: Pokemon;
+  pokemon: Pokemon | null = null;
+  loading: boolean = false;
+  error: string | null = null;
 
   constructor(private service: PokemonService) {}
 
   ngOnInit() {
-    this.service.getPokemon('pikachu').subscribe((data: Pokemon) => {
-      this.pokemon = data;
+    this.loadPokemon('pikachu');
+  }
+
+  private loadPokemon(name: string) {
+    this.loading = true;
+    this.error = null;
+
+    this.service.getPokemon(name).subscribe({
+      next: (data: Pokemon) => {
+        this.pokemon = data;
+        this.loading = false;
+      },
+      error: (error) => {
+        console.error('Error fetching pokemon:', error);
+        this.error = `Pokémon "${name}" não encontrado. Tente outro nome.`;
+        this.loading = false;
+        this.pokemon = null;
+      },
     });
   }
 
   onSearchClick() {
-    console.log('Searching for pokemon:', this.searchTerm);
-    this.service.getPokemon(this.searchTerm).subscribe((data: Pokemon) => {
-      this.pokemon = data;
-    });
+    if (this.searchTerm.trim()) {
+      this.loadPokemon(this.searchTerm.toLowerCase().trim());
+    }
   }
 }

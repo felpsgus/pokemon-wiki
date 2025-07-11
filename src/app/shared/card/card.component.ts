@@ -8,5 +8,5 @@ import { Pokemon } from '../../model/pokemon';
   standalone: false,
 })
 export class CardComponent {
-  @Input() pokemon!: Pokemon;
+  @Input() pokemon: Pokemon | null = null;
 }

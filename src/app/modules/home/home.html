@@ -1,13 +1,27 @@
 <div class="pokemon-container">
   <div class="pokemon-header">
     <img [src]="logo" alt="Logo" class="logo">
-    <p class="pokemon-description">Descubra o mundo dos Pokémons</p>
     <div class="pokemon-search">
-      <app-input placeholder="Insira o nome do Pokémon" icon="search"></app-input>
+      <app-input [(value)]="searchTerm" placeholder="Insira o nome do Pokémon" icon="search"
+        (keyup.enter)="onSearchClick()" id="pokemon-search-input"></app-input>
       <app-button variant="primary" (click)="onSearchClick()">Buscar</app-button>
     </div>
   </div>
-  <div class="pokemon-container">
-    <app-card [pokemon]="pokemon"></app-card>
+  <div class="pokemon-grid">
+    <!-- Loading State -->
+    <div *ngIf="loading" class="pokemon-loading">
+      <div class="loading-spinner"></div>
+      <p class="loading-text">Carregando Pokémon...</p>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="error && !loading" class="pokemon-error">
+      <div class="error-icon">😞</div>
+      <h3 class="error-title">Oops!</h3>
+      <p class="error-description">{{ error }}</p>
+    </div>
+
+    <!-- Success State -->
+    <app-card *ngIf="pokemon && !loading && !error" [pokemon]="pokemon"></app-card>
   </div>
 </div>

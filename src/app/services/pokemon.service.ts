@@ -8,11 +8,9 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class PokemonService {
-  http: HttpClient;
-  private apiUrl: string;
+  private readonly apiUrl: string;
 
-  constructor(http: HttpClient) {
-    this.http = http;
+  constructor(private http: HttpClient) {
     this.apiUrl = environment.apiUrl;
 
     // Log environment information at execution time
