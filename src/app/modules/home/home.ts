@@ -9,7 +9,7 @@ import { Pokemon } from '../../model/pokemon';
   styleUrl: './home.scss',
 })
 export class Home implements OnInit {
-  logo = '/pokemon.png';
+  logo = 'pokemon.png';
   searchTerm: string = '';
   pokemon: Pokemon | null = null;
   loading: boolean = false;
