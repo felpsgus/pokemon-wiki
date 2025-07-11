@@ -1,59 +1,150 @@
-# AnimeWiki
+# 🎮 Pokémon Wiki
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+Uma aplicação web moderna e interativa para explorar o mundo dos Pokémons, construída com Angular 20 e integrada com a [PokéAPI](https://pokeapi.co/).
 
-## Development server
+![Angular](https://img.shields.io/badge/Angular-20.0.5-red)
+![TypeScript](https://img.shields.io/badge/TypeScript-Latest-blue)
+![SCSS](https://img.shields.io/badge/SCSS-Styling-pink)
+![PokéAPI](https://img.shields.io/badge/PokéAPI-Integration-yellow)
 
-To start a local development server, run:
+## ✨ Funcionalidades
+
+- 🔍 **Busca de Pokémons** - Pesquise qualquer Pokémon pelo nome
+- 🎨 **Design Moderno** - Interface elegante com glassmorphism e animações fluidas
+- ⚡ **Animações Interativas** - Cards com efeitos hover e brilho infinito
+- 🏷️ **Sistema de Tipos** - Visualização colorida dos tipos de Pokémon
+- 📱 **Responsivo** - Funciona perfeitamente em desktop e mobile
+- 🚀 **Performance** - Otimizado com Fetch API e lazy loading
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Framework**: Angular 20.0.5
+- **Linguagem**: TypeScript
+- **Estilização**: SCSS com design system personalizado
+- **API**: PokéAPI (https://pokeapi.co/)
+- **Ícones**: Material Icons
+- **HTTP Client**: Angular HttpClient com Fetch API
+
+## 📋 Pré-requisitos
+
+Antes de começar, certifique-se de ter instalado:
+
+- [Node.js](https://nodejs.org/) (versão 18 ou superior)
+- [npm](https://www.npmjs.com/) (geralmente vem com o Node.js)
+- [Angular CLI](https://angular.dev/tools/cli) (versão 20 ou superior)
+
+```bash
+# Instalar Angular CLI globalmente
+npm install -g @angular/cli
+```
+
+## 🚀 Como Baixar e Instalar
+
+1. **Clone o repositório**
+
+```bash
+git clone https://github.com/seu-usuario/pokemon-wiki.git
+cd pokemon-wiki
+```
+
+2. **Instale as dependências**
+
+```bash
+npm install
+```
+
+3. **Configure o ambiente** (opcional)
+   - Os arquivos de ambiente já estão configurados para usar a PokéAPI
+   - Localização: `src/environments/`
+
+## 🏃‍♂️ Como Executar
+
+### Servidor de Desenvolvimento
+
+Para iniciar o servidor local de desenvolvimento:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+A aplicação estará disponível em `http://localhost:4200/`. A página recarregará automaticamente sempre que você modificar os arquivos fonte.
 
-## Code scaffolding
+### Build para Produção
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Para criar uma build otimizada para produção:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Os arquivos compilados serão armazenados no diretório `dist/`. A build de produção otimiza automaticamente a aplicação para performance e velocidade.
 
-## Running unit tests
+## 🎯 Como Usar
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+1. **Página Inicial**: Ao abrir a aplicação, você verá o Pikachu como Pokémon padrão
+2. **Buscar Pokémon**:
+   - Digite o nome do Pokémon no campo de busca
+   - Pressione Enter ou clique no botão "Buscar"
+   - Aguarde o carregamento dos dados
+3. **Interagir com o Card**:
+   - Passe o mouse sobre o card para ver as animações
+   - Observe os tipos do Pokémon com cores específicas
+   - Aproveite o efeito de brilho infinito no hover
 
-```bash
-ng test
+## 🎨 Design System
+
+O projeto utiliza um design system personalizado com:
+
+- **Paleta de Cores**: Azul (#3367B0) e Amarelo (#FFCC04) inspirados no Pokémon
+- **Tipografia**: Roboto com diferentes pesos e tamanhos
+- **Espaçamento**: Sistema consistente baseado em múltiplos de 0.25rem
+- **Animações**: Transições suaves e efeitos visuais modernos
+- **Glassmorphism**: Efeitos de vidro fosco e backdrop-filter
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── app/
+│   ├── model/           # Interfaces TypeScript
+│   ├── modules/         # Módulos da aplicação
+│   │   └── home/        # Página principal
+│   ├── services/        # Serviços (PokemonService)
+│   └── shared/          # Componentes reutilizáveis
+│       ├── button/      # Componente de botão
+│       ├── card/        # Card do Pokémon
+│       └── input/       # Campo de entrada
+├── environments/        # Configurações de ambiente
+└── styles.scss         # Estilos globais
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## 🔧 Scripts Disponíveis
 
 ```bash
-ng e2e
+npm start          # Inicia o servidor de desenvolvimento
+npm run build      # Cria build de produção
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 🤝 Contribuindo
 
-## Additional Resources
+Contribuições são bem-vindas! Para contribuir:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+## 🙏 Agradecimentos
+
+- [PokéAPI](https://pokeapi.co/) - API gratuita e fantástica dos Pokémons
+- [Angular Team](https://angular.dev/) - Framework incrível
+- [Material Design](https://material.io/) - Sistema de ícones
+
+---
+
+**Desenvolvido com ❤️ e ☕**
